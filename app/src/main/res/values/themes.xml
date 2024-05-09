@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Labexam04" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/RebeccaPurple</item>
+         <item name="colorPrimaryVariant">@color/RebeccaPurple</item>
+         <item name="android:statusBarColor">@color/RebeccaPurple</item>
     </style>
 
     <style name="Theme.Labexam04" parent="Base.Theme.Labexam04" />
