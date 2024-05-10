@@ -7,4 +7,78 @@
     android:layout_height="match_parent"
     tools:context=".AddActivity">
 
+
+    <TextView
+        android:id="@+id/addText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="334dp"
+        android:layout_marginBottom="694dp"
+        android:text="Add Note"
+        android:textColor="@color/RebeccaPurple"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <EditText
+        android:id="@+id/titleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:maxLines="1"
+        android:background="@drawable/purple_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addText" />
+
+    <ImageView
+        android:id="@+id/addBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/titleEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_check_24" />
+
+    <EditText
+        android:id="@+id/descriptionEditText"
+        android:layout_width="374dp"
+        android:layout_height="338dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="270dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="@drawable/purple_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
