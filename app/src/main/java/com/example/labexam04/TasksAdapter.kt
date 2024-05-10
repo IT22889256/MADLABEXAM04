@@ -1,17 +1,25 @@
 package com.example.labexam04
 
+
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class TasksAdapter(private var tasks: List<Task>, context: Context): RecyclerView.Adapter<TasksAdapter.TaskViewHolder>() {
 
+    private val db: TaskDBHelper = TaskDBHelper(context)
+
     class TaskViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
+        val updateBtn: ImageView = itemView.findViewById(R.id.updateBtn)
+        val deleteBtn: ImageView = itemView.findViewById(R.id.deleteBtn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -25,6 +33,19 @@ class TasksAdapter(private var tasks: List<Task>, context: Context): RecyclerVie
        val task = tasks[position]
        holder.titleTextView.text = task.title
        holder.descriptionTextView.text = task.description
+
+        holder.updateBtn.setOnClickListener{
+            val intent = Intent(holder.itemView.context, UpdateActivity::class.java).apply {
+                putExtra("task_id", task.id)
+            }
+            holder.itemView.context.startActivity(intent)
+        }
+
+        holder.deleteBtn.setOnClickListener{
+            db.deleteTask(task.id)
+            refreshData(db.getAllTasKs())
+            Toast.makeText(holder.itemView.context, "Note Deleted", Toast.LENGTH_SHORT).show()
+        }
 
 
     }
